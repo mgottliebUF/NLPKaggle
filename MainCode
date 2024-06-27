@@ -2,6 +2,12 @@
 # It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python
 # For example, here's several helpful packages to load
 
+"""
+The task involves building a model to classify whether a given tweet is about a real disaster or not. 
+The dataset includes tweets with corresponding keywords and locations, though these may be missing for some entries. 
+The training data is labeled, whereas the test data is not. The goal is to predict the 'target' label for the test set tweets.
+"""
+
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 
@@ -129,3 +135,11 @@ submission.to_csv("/kaggle/working/submission.csv", index=False)
 
 # Verify the file exists
 print(os.listdir('/kaggle/working/'))
+
+
+"""
+The CNN model performs reasonably well in classifying tweets related to real disasters. 
+The text preprocessing steps, including cleaning and TF-IDF vectorization, were crucial in preparing the data for the model. 
+While the model shows good accuracy, further improvements can be made by exploring different model architectures, hyperparameter tuning, and incorporating additional features such as keyword and location information.
+Future work could involve using more advanced NLP models like BERT for potentially better performance.
+"""
